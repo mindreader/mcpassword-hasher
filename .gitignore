@@ -1,0 +1,8 @@
+.gitignore
+*.swp
+*.swo
+build/
+node_modules/
+testhtml/
+web-ext-artifacts/
+src.zip
