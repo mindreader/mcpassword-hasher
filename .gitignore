@@ -6,3 +6,4 @@ node_modules/
 testhtml/
 web-ext-artifacts/
 src.zip
+.web-extension-id
