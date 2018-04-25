@@ -2,7 +2,7 @@
 
   "manifest_version": 2,
   "name": "McPassword Hasher",
-  "version": "1.0.0",
+  "version": "1.0.3",
 
   "applications": {
     "gecko": {
@@ -42,7 +42,7 @@
       "128": "icons/keycap-hash-tag-128x128.png"
     },
 
-    "default_popup": "src/popup.html",
+    "default_popup": "build/popup.html",
     "default_title": "McPassword Hasher",
     "browser_style": true
   },
@@ -52,7 +52,7 @@
   },
 
   "options_ui": {
-      "page": "src/options.html",
+      "page": "build/options.html",
       "browser_style": true
   },
 

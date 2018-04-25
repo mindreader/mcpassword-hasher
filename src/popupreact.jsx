@@ -3,8 +3,8 @@ import { SiteStorage } from "./storage"
 import { PassHashCommon } from "./passhash-common"
 import CheckBox from "./CheckBox"
 import Sizes from "./Sizes"
-import "./popup.css"
 import React from "react"
+import "./popup.css"
 
 export class McPassHashPopup extends React.Component {
   constructor(props) {
@@ -57,9 +57,9 @@ export class McPassHashPopup extends React.Component {
     })
   }
   componentDidUpdate() {
-    // we must wait until after render to select text.
     if (this.state.sitepassfocused) {
       this.state.sitepassfocused.select()
+      // I feel like there's a better place for this, but I'm not sure where
       this.save()
     }
   }

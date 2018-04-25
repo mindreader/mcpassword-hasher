@@ -11,16 +11,18 @@ div#mcpasshash-popup {
     "sitepasswordlabel sitepassword sitepassword options"
     "requirements requirements size size"
     "restrictions restrictions size size"
-    "clipboardbutton fillblankbutton fillblankbutton cancelbutton"
+    "clipboardbutton fillblankbutton fillblankbutton cancelbutton";
 }
 
 div#mcpasshash-popup > * {
   align-self: center;
 }
 
-#masterhint {
-  justify-self: center;
+/* this gets rid of an annoying flicker on popup */
+label#masterpasswordlabel {
+  padding-right: 1px;
 }
+
 
 /* too bad attr() is not supported :( */
 #sitetaglabel        { grid-area: sitetaglabel; }

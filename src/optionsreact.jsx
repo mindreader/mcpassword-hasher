@@ -1,8 +1,9 @@
 import { ExtPrefStorage } from "./storage"
-import "./options.css"
 import React from "react"
 import CheckBox from "./CheckBox"
 import Sizes from "./Sizes"
+
+import "./options.css"
 
 
 export class McPassHashOptions extends React.Component {
