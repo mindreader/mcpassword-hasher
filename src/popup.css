@@ -1,0 +1,66 @@
+div#mcpasshash-popup {
+  display: grid;
+  grid-gap: 0.3em;
+  margin: 3%;
+
+  grid-template-columns: auto auto 2em;
+
+  grid-template-areas: 
+    "sitetaglabel sitetag sitetag bump"
+    "masterpasswordlabel masterpassword masterpassword masterhint"
+    "sitepasswordlabel sitepassword sitepassword options"
+    "requirements requirements size size"
+    "restrictions restrictions size size"
+    "clipboardbutton fillblankbutton fillblankbutton cancelbutton"
+}
+
+div#mcpasshash-popup > * {
+  align-self: center;
+}
+
+#masterhint {
+  justify-self: center;
+}
+
+/* too bad attr() is not supported :( */
+#sitetaglabel        { grid-area: sitetaglabel; }
+#sitetag             { grid-area: sitetag; }
+
+#sitepasswordlabel   { grid-area: sitepasswordlabel; }
+#sitepassword        { grid-area: sitepassword; }
+
+#masterpassword      { grid-area: masterpassword; }
+#masterpasswordlabel { grid-area: masterpasswordlabel; }
+#masterhint          { grid-area: masterhint; }
+
+#bump                { grid-area: bump; }
+#options             { grid-area: options; }
+#unmask              { grid-area: unmask; }
+
+#requirements        { grid-area: requirements; }
+#restrictions        { grid-area: restrictions; }
+#size                { grid-area: size; }
+
+#cancelbutton        { grid-area: cancelbutton; }
+#fillblankbutton     { grid-area: fillblankbutton; }
+#clipboardbutton     { grid-area: clipboardbutton; }
+
+.hidden { display: none; }
+
+#size > div.buttons {
+  display: grid;
+}
+
+#size > div.buttons > div:nth-child(odd) {
+  grid-column: 1;
+}
+#size > div.buttons > div:nth-child(even) {
+  grid-column: 2;
+}
+
+.header {
+  font-size: 130%;
+  font-weight: bold;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}

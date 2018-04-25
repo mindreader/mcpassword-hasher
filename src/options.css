@@ -1,0 +1,53 @@
+div#options {
+  display: grid;
+  grid-gap: 0.3em;
+  margin: 3%;
+  overflow-y: auto; 
+
+  grid-template-areas: 
+    "howtouse howtouse"
+    "storage storage"
+    "userinterface userinterface"
+    "requirements size"
+    "restrictions size"
+}
+
+div#options > * {
+  align-self: center;
+}
+
+#howtouse      { grid-area: howtouse; }
+#userinterface { grid-area: userinterface; }
+#requirements  { grid-area: requirements; }
+#restrictions  { grid-area: restrictions; }
+#storage       { grid-area: storage; }
+#size          { grid-area: size; }
+
+#userinterface > label, #requirements > label, #restrictions > label, #storage > label {
+  display: block;
+}
+
+div.text {
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+#size > div.buttons {
+  display: grid;
+  max-width: 100px; 
+}
+
+/* FIXME these should be in two columns but it's not working for some reason */
+#size > div.buttons > div:nth-child(odd) {
+  grid-column: 1;
+}
+#size > div.buttons > div:nth-child(even) {
+  grid-column: 2;
+}
+
+.header {
+  font-size: 130%;
+  font-weight: bold;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}
