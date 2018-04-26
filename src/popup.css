@@ -22,6 +22,9 @@ div#mcpasshash-popup > * {
 label#masterpasswordlabel {
   padding-right: 1px;
 }
+#masterhint {
+  justify-self: stretch;
+}
 
 
 /* too bad attr() is not supported :( */
