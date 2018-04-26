@@ -51,3 +51,8 @@ div.text {
   margin-top: 0.5em;
   margin-bottom: 0.5em;
 }
+
+/* I'm disabling storage options in order to research them more */
+#storage {
+  display: none;
+}
