@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack && cp src/*.html build/ && web-ext build -i testhtml",
     "watch": "webpack -w",
-    "sign": "web-ext sign -i src -i src.zip -i testhtml --api-key=$API_KEY --api-secret=$API_SECRET"
+    "sign": "web-ext sign -i src -i src.zip -i testhtml --api-key=$API_KEY --api-secret=$API_SECRET -i mysign.sh"
   },
   "author": "David McHealy",
   "license": "ISC",
