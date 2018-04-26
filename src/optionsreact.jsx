@@ -23,11 +23,22 @@ export class McPassHashOptions extends React.Component {
       nospecial: false,
 
       shouldsave: false,
+      shortcut: null,
     }
+    this.prefs = ExtPrefStorage.get()
+    this.platform = browser.runtime.getPlatformInfo()
   }
 
   componentDidMount = () => {
-    ExtPrefStorage.get().then(prefs => {
+    Promise.all([this.prefs, this.platform]).then(pms => {
+      const prefs = pms[0]
+      const platform = pms[1]
+
+      const shortcut =
+        platform.os == "mac" ? "Ctrl + F6" :
+          platform.os == "linux" ? "Ctrl + F6" :
+            "Ctrl + Shift + F6"
+
       this.setState({
         masterkeyhint: prefs.masterkeyhint,
         fulldomainsitetag: prefs.fulldomainsitetag,
@@ -38,6 +49,7 @@ export class McPassHashOptions extends React.Component {
         onedigit: prefs.onedigit,
         upperlower: prefs.upperlower,
         nospecial: prefs.nospecial,
+        shortcut: shortcut
       })
     })
   }
@@ -76,12 +88,6 @@ export class McPassHashOptions extends React.Component {
 
   render = () => {
 
-    const os = browser.runtime.platformOs
-    const shortcut =
-      os == "mac" ? "Ctrl + F6" :
-        os == "linux" ? "Ctrl + F6" :
-          "Ctrl + Shift + F6"
-
     return (
       <div id="options">
         <div id="userinterface">
@@ -93,7 +99,7 @@ export class McPassHashOptions extends React.Component {
         <div id="howtouse">
           <div className="header">How to Use</div>
           <div className="text">
-            {"Simply browse to a page with a password field and then either hit " + shortcut + ", or click the McPassHash logo in your toolbar (the blue pound sign)."}
+            {"Simply browse to a page with a password field and then either hit " + this.state.shortcut + ", or click the McPassHash logo in your toolbar (the blue pound sign)."}
           </div>
           <div className="text">
             {"Enter a super secure password that you only use here into the master password field.  The characters to the right of the password help you to know you've typed the same password you've typed in the past (they will be the same)."}
