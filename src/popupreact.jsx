@@ -23,6 +23,9 @@ export class McPassHashPopup extends React.Component {
       onedigit: true,
       upperlower: true,
       nospecial: false,
+
+      // extension pref
+      masterkeyhint: true,
     }
   }
 
@@ -53,6 +56,7 @@ export class McPassHashPopup extends React.Component {
         onedigit: siteprefs.onedigit,
         upperlower: siteprefs.upperlower,
         nospecial: siteprefs.nospecial,
+        masterkeyhint: siteprefs.masterkeyhint,
       })
     })
   }
@@ -138,7 +142,7 @@ export class McPassHashPopup extends React.Component {
 
         <input id="sitetag" onChange={this.siteTagChange} value={this.state.sitetag} type="text" name="sitetag" placeholder="site tag" tabIndex="3"/>
         <input id="masterpassword" onChange={this.masterPasswordChange} type="password" name="masterpassword" placeholder="master password" tabIndex="1"/>
-        <div id="masterhint">{this.state.hint}</div>
+        <div id="masterhint">{this.state.masterkeyhint ? this.state.hint : ""}</div>
         <input id="sitepassword" name="sitepassword" placeholder="site password" onFocus={this.siteFocused} onBlur={this.siteUnfocused}
           value={this.pass()} type={this.state.sitepassfocused ? "text" : "password"}/>
 
