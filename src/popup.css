@@ -20,7 +20,7 @@ div#mcpasshash-popup > * {
 
 /* this gets rid of an annoying flicker on popup */
 label#masterpasswordlabel {
-  padding-right: 1px;
+  padding-right: 3px;
 }
 #masterhint {
   justify-self: stretch;

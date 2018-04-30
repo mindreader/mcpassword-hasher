@@ -140,8 +140,8 @@ export class McPassHashPopup extends React.Component {
         <label id="masterpasswordlabel" htmlFor="master">Master Password:</label>
         <label id="sitepasswordlabel" htmlFor="password">Site Password:</label>
 
-        <input id="sitetag" onChange={this.siteTagChange} value={this.state.sitetag} type="text" name="sitetag" placeholder="site tag" tabIndex="3"/>
-        <input id="masterpassword" onChange={this.masterPasswordChange} type="password" name="masterpassword" placeholder="master password" tabIndex="1"/>
+        <input id="sitetag" onChange={this.siteTagChange} value={this.state.sitetag} type="text" name="sitetag" placeholder="site tag" tabIndex="1"/>
+        <input id="masterpassword" onChange={this.masterPasswordChange} type="password" name="masterpassword" placeholder="master password" tabIndex="2"/>
         <div id="masterhint">{this.state.masterkeyhint ? this.state.hint : ""}</div>
         <input id="sitepassword" name="sitepassword" placeholder="site password" onFocus={this.siteFocused} onBlur={this.siteUnfocused}
           value={this.pass()} type={this.state.sitepassfocused ? "text" : "password"}/>
@@ -171,7 +171,7 @@ export class McPassHashPopup extends React.Component {
           <Sizes onChange={this.sizeChange} currentSize={this.state.size}/>
         </div>
         <button className="browser-style" onClick={this.cancel} id="cancelbutton">Cancel</button>
-        <button className="browser-style" onClick={this.fill} id="fillblankbutton" tabIndex="2"
+        <button className="browser-style" onClick={this.fill} id="fillblankbutton" tabIndex="3"
           disabled={this.state.masterpassword.length <= 0 || this.state.sitetag.length <= 0}>
           Fill in Blanks
         </button>
