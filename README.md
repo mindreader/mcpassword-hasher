@@ -27,3 +27,10 @@ Go to the addons page (about:addons) and adjust settings as necessary.  These se
 It should be enough to run `npx webpack -w` to watch the javascript files in src, automatically recompile them on change, and `npx web-ext run`, which opens a clean browser window with debugging enabled, watches all files mentioned in manifest.json, reloading the extension on any detected change.  I've found it to be a bit fiddly but it is very helpful.
 
 I've set up an npm script to zip up the src directory upon signing a new build.  The reason for this is that the javascript files in the src directory use features that firefox's addon linter doesn't understand and thus rejects it for having javascript errors.  While I could just omit them from the extension, anyone who looked in the file would see only compiled javascript, assume I was harvesting their site passwords and raise the alarm.  This way at the very least, someone who is interested can see all the original source files and reassure themselves that nothing untoward is going on or even build the extension themselves.
+
+## Issues
+I've yet to find a site that does not work with the "Fill in the blank" feature in this addon, but I'm sure there are some out there somewhere.  While I can't guarantee that I can get every site to work, I can guarantee that I will at least make the attempt.
+
+## Future Features
+* Make it possible to shift click password blanks to fill in multiple password blanks in one go.
+* Find some way to auto focus the password blank upon opening the popup window.  I have yet to find a way to make this happen.
