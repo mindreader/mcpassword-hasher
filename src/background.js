@@ -10,7 +10,7 @@ class Content {
 
   queryIninitialTab() {
     return new Promise((resolve, reject) => {
-      browser.tabs.query({active: true}).then(tabs => {
+      browser.tabs.query({active: true, currentWindow: true}).then(tabs => {
         if (tabs.length >= 1) resolve(tabs[0].id)
         else reject("there are no active tabs")
       }).catch(err => reject(err))

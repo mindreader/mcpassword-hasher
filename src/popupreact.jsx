@@ -32,7 +32,7 @@ export class McPassHashPopup extends React.Component {
   componentDidMount = () => {
 
     this.tab = new Promise((resolve, reject) => {
-      browser.tabs.query({active: true}).then(tabs => {
+      browser.tabs.query({active: true, currentWindow: true}).then(tabs => {
         if (tabs.length >= 1) resolve(tabs[0])
         else reject("there are no active tabs")
       })
@@ -181,5 +181,3 @@ export class McPassHashPopup extends React.Component {
     //  <!-- input id="clipboardbutton" type="button" value="Copy To Clipboard" disabled -->
   }
 }
-
-
