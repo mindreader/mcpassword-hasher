@@ -1,6 +1,6 @@
 div#mcpasshash-popup {
   display: grid;
-  grid-gap: 0.3em;
+  grid-gap: 0.5em;
   margin: 4%;
 
   grid-template-columns: auto auto 2em;
@@ -8,10 +8,11 @@ div#mcpasshash-popup {
   grid-template-areas: 
     "sitetaglabel sitetag sitetag bump"
     "masterpasswordlabel masterpassword masterpassword masterhint"
-    "sitepasswordlabel sitepassword sitepassword options"
+    "sitepasswordlabel sitepassword sitepassword ."
+    "options fillblankbutton fillblankbutton cancelbutton"
     "requirements requirements size size"
-    "restrictions restrictions size size"
-    "clipboardbutton fillblankbutton fillblankbutton cancelbutton";
+    "restrictions restrictions size size";
+
 }
 
 div#mcpasshash-popup > * {
