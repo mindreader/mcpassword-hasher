@@ -8,7 +8,8 @@
     "build": "webpack && cp src/*.html build/",
     "watch": "webpack && cp src/*.html build/ && webpack -w",
     "archive": "git archive --format=tar.gz $npm_package_gitHead > mcpassword-hasher.tar.gz",
-    "sign": "web-ext sign -i src -i testhtml --api-key=$API_KEY --api-secret=$API_SECRET -i mysign.sh"
+    "sign": "web-ext sign -i src -i testhtml --api-key=$API_KEY --api-secret=$API_SECRET -i mysign.sh",
+    "clean": "rm -rf node_mdules/ build/"
   },
   "author": "David McHealy",
   "license": "ISC",
