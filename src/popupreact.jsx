@@ -84,11 +84,11 @@ export class McPassHashPopup extends React.Component {
     })
   }
 
-  siteFocused = (e) =>          {
+  siteFocused = (e) => {
     this.setState({ sitepassfocused: e.target })
     this.save()
   }
-  siteUnfocused = () =>         {
+  siteUnfocused = () => {
     this.setState({ sitepassfocused: false })
     this.save()
   }
