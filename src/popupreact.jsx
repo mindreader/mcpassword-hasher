@@ -135,7 +135,7 @@ export class McPassHashPopup extends React.Component {
 
   render = () => {
     return (
-      <div className="browser-style" id="mcpasshash-popup">
+      <div className={this.state.options ? "browser-style" : "browser-style optionhidden"} id="mcpasshash-popup">
         <label id="sitetaglabel" htmlFor="sitetag">Site Tag:</label>
         <label id="masterpasswordlabel" htmlFor="master">Master Password:</label>
         <label id="sitepasswordlabel" htmlFor="password">Site Password:</label>
@@ -149,24 +149,24 @@ export class McPassHashPopup extends React.Component {
         <button id="bump" className="browser-style" onClick={this.bump}>Bump</button>
         <button id="options" className="browser-style" onClick={this.optionsChange}>Options</button>
 
-        <div id="restrictions" className={this.state.options ? "" : "hidden"}>
+        <div id="restrictions" className={this.state.options ? "" : "optionhidden"}>
           <div className="header">Restrictions</div>
           <CheckBox id="nospecial" onChange={this.nospecialChange} checked={this.state.nospecial} desc="No special characters"/>
           <CheckBox id="digitsonly" onChange={this.digitsonlyChange} checked={this.state.digitsonly} desc="Digits only"/>
         </div>
 
-        <div id="requirements" className={this.state.options ? "" : "hidden"}>
+        <div id="requirements" className={this.state.options ? "" : "optionhidden"}>
           <div className="header">Requirements</div>
           <CheckBox id="onedigit" onChange={this.onedigitChange} checked={this.state.onedigit} desc="At least one digit"/>
 
           <CheckBox id="onepunc" onChange={this.onepuncChange} disabled={this.state.digitsonly || this.state.nospecial}
-            checked={this.state.onepunc && !this.state.digitsonly && !this.state.nospecial} desc="At least one punctuation character"/>
+            checked={this.state.onepunc && !this.state.digitsonly && !this.state.nospecial} desc="At least one punctuation"/>
           
           <CheckBox id="upperlower" onChange={this.upperlowerChange} disabled={this.state.digitsonly}
-            checked={this.state.upperlower && !this.state.digitsonly} desc="Both upper and lower case characters"/>
+            checked={this.state.upperlower && !this.state.digitsonly} desc="Both upper and lower case"/>
         </div>
 
-        <div id="size" className={this.state.options ? "" : "hidden"}>
+        <div id="size" className={this.state.options ? "" : "optionhidden"}>
           <div className="header">Size</div>
           <Sizes onChange={this.sizeChange} currentSize={this.state.size}/>
         </div>
