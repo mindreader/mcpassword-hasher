@@ -34,3 +34,4 @@ I've yet to find a site that does not work with the "Fill in the blank" feature 
 ## Future Features
 * Make it possible to shift click password blanks to fill in multiple password blanks in one go.
 * Find some way to auto focus the password blank upon opening the popup window.  I have yet to find a way to make this happen.
+* Save master hint upon generating a password, then outline it in green when you are using the same master password as you have been for that site.
