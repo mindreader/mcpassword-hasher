@@ -24,9 +24,10 @@ Go to the addons page (about:addons) and adjust settings as necessary.  These se
 * Thanks to the writer of Password Hasher NG for a solid layout and the idea for master password hint.
 
 ## Hacking
-It should be enough to run `npx webpack -w` to watch the javascript files in src, automatically recompile them on change, and `npx web-ext run`, which opens a clean browser window with debugging enabled, watches all files mentioned in manifest.json, reloading the extension on any detected change.  I've found it to be a bit fiddly but it is very helpful.
+1. npm i
+1. npm run build
 
-I've set up an npm script to zip up the src directory upon signing a new build.  The reason for this is that the javascript files in the src directory use features that firefox's addon linter doesn't understand and thus rejects it for having javascript errors.  While I could just omit them from the extension, anyone who looked in the file would see only compiled javascript, assume I was harvesting their site passwords and raise the alarm.  This way at the very least, someone who is interested can see all the original source files and reassure themselves that nothing untoward is going on or even build the extension themselves.
+It should be enough to run `npm watch` to watch for changes to files in src and automatically recompile them on change, and `npx web-ext run`, which opens a clean browser window with debugging enabled, watches all files mentioned in manifest.json, reloading the extension on any detected change.  I've found it to be a bit fiddly but it is very helpful.
 
 ## Issues
 I've yet to find a site that does not work with the "Fill in the blank" feature in this addon, but I'm sure there are some out there somewhere.  While I can't guarantee that I can get every site to work, I can guarantee that I will at least make the attempt.

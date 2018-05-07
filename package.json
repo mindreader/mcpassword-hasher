@@ -5,9 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "npx webpack && cp src/*.html build/ && web-ext build -i testhtml",
-    "watch": "mkdir build || cp src/*.html build/ && npx webpack -w",
-    "sign": "zip src -r src && web-ext sign -i src -i src.zip -i testhtml --api-key=$API_KEY --api-secret=$API_SECRET -i mysign.sh"
+    "build": "webpack && cp src/*.html build/",
+    "watch": "webpack && cp src/*.html build/ && webpack -w",
+    "sign": "web-ext sign -i src -i testhtml --api-key=$API_KEY --api-secret=$API_SECRET -i mysign.sh"
   },
   "author": "David McHealy",
   "license": "ISC",
