@@ -143,8 +143,10 @@ export class McPassHashPopup extends React.Component {
         <input id="sitetag" onChange={this.siteTagChange} value={this.state.sitetag} type="text" name="sitetag" placeholder="site tag" tabIndex="1"/>
         <input id="masterpassword" onChange={this.masterPasswordChange} type="password" name="masterpassword" placeholder="master password" tabIndex="2"/>
         <div id="masterhint">{this.state.masterkeyhint ? this.state.hint : ""}</div>
-        <input id="sitepassword" name="sitepassword" placeholder="site password" onFocus={this.siteFocused} onBlur={this.siteUnfocused}
-          value={this.pass()} type={this.state.sitepassfocused ? "text" : "password"}/>
+        <input id="sitepassword" name="sitepassword" placeholder="site password"
+          onFocus={this.siteFocused} onBlur={this.siteUnfocused}
+          value={this.pass()} type={this.state.sitepassfocused ? "text" : "password"}
+          disabled={this.state.masterpassword.length <= 0 || this.state.sitetag.length <= 0}/>
 
         <button id="bump" className="browser-style" onClick={this.bump}>Bump</button>
         <button id="options" className="browser-style" onClick={this.optionsChange}>Options</button>
