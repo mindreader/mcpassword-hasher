@@ -102,7 +102,7 @@ export class McPassHashOptions extends React.Component {
             {"Simply browse to a page with a password field and then either hit " + this.state.shortcut + ", or click the McPassHash logo in your toolbar (the blue pound sign)."}
           </div>
           <div className="text">
-            {"Enter a super secure password that you only use with this extension into the master password field.  The characters to the right of the password a hint to help you to know you've typed the same password you've typed in the past.  Take note of those characters.  They should be the same each time."}
+            {"Enter a super secure password that you only use with this extension into the master password field.  The characters to the right of the password are a hint to help you to know you've typed the same password you've typed in the past.  Take note of those characters.  They should be the same each time."}
           </div>
           <div className="text">
             {"Then press \"Fill in Blanks\" and McPassHash will attempt to find potential password fields on your current page and highlight them.  Simply click one of those fields and your password will be entered.  Alternatively you may simply click the Site Password field and you will be able to copy your password and paste it into a blank."}
