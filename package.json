@@ -7,6 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack && cp src/*.html build/",
     "watch": "webpack && cp src/*.html build/ && webpack -w",
+    "archive": "git archive --format=tar.gz $npm_package_gitHead > mcpassword-hasher.tar.gz",
     "sign": "web-ext sign -i src -i testhtml --api-key=$API_KEY --api-secret=$API_SECRET -i mysign.sh"
   },
   "author": "David McHealy",
